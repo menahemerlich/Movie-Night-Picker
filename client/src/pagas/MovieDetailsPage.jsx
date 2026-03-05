@@ -15,7 +15,7 @@ function MovieDetailsPage() {
             <div className="detailsPage">
 
                 <div className="posterSection">
-                    <img className="posterImage" src={movie.Poster} alt="" />
+                    <img className="posterImage" src={movie.Poster} alt="שגיאה בטעינת התמונה" />
                     <button className="chooseSeats" onClick={() => navigate(`/movie/${id}/seats/${id}`)}>
                         Choose Seats
                     </button>
