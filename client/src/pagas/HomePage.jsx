@@ -23,6 +23,8 @@ function HomePage() {
             <h1>Movie Night</h1>
             <p>Search a movie and pick your seats</p>
             <Search />
+            <div className='movies'>
+
             {filteredMovies.map((item) => {                
                 return (
                     <div key={item.imdbID} onClick={() => navigate(`/movie/${item.imdbID}`)}>
@@ -30,6 +32,7 @@ function HomePage() {
                     </div>
                 )
             })}
+            </div>
         </div>
     )
 }

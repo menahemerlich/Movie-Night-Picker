@@ -18,3 +18,157 @@
     background-color: #33d473;
     cursor: not-allowed;
 }
+.movieCard{
+    width:280px;
+    border-radius:20px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    border:2px solid #222;
+    
+}
+
+.posterContainer{
+    position:relative;
+}
+
+.poster{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.movieTitle{
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    color:white;
+    font-size:26px;
+    font-weight:bold;
+}
+
+.movieInfo{
+    background:#dcdcdc;
+    padding:20px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.label{
+    color:#4b6482;
+    font-weight:600;
+}
+
+.seatButton{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#f5b800;
+    font-size:18px;
+}
+
+.seatButton:hover{
+    background:#e0a600;
+}
+.movies{
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    gap: 30px;
+    justify-content: center;
+    padding: 40px;
+}
+.back{
+    margin-left: 2em;
+    margin-top: 2em;
+}
+.detailsPage{
+    display:grid;
+    grid-template-columns: 320px 1fr;
+    gap:40px;
+    padding:40px;
+    background-color: #e7e5e6;
+    border-radius: 15px;
+    margin: 2em;
+    border: 2px solid;
+}
+
+.posterImage{
+    width:100%;
+    border-radius:20px;
+}
+
+.chooseSeats{
+    margin-top:20px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#f5b800;
+    font-size:18px;
+}
+
+.ratingRow{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.tag{
+    background:#e5e7eb;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.story{
+    margin:10px 0 25px 0;
+    color:#4b5563;
+}
+
+.infoGrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.infoBox{
+    border:1px solid #cbd5e1;
+    padding:15px;
+    border-radius:10px;
+}
+
+.buttons{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+}
+
+.seatsButton{
+    background:#111827;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+}
+
+.backButton{
+    background:#e5e7eb;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+}
+.title{
+    margin-left: 1.2em;
+    margin-top: 2em;
+}
+.seatsPage{
+    margin: auto;
+    padding: 30px;
+}

@@ -10,22 +10,43 @@ function MovieDetailsPage() {
 
     return (
         <div>
-            <p onClick={() => navigate("/")}>🔙Back</p>
-            <h1>{movie.Title}({movie.Year})</h1>
-            <img src={movie.Poster} alt="" />
-            <button onClick={() => navigate(`/movie/${id}/seats/${id}`)}>Choose Seats</button>
-            <p>IMDb: {movie.imdbRating}</p>
-            <p>Votes: {movie.imdbVotes}</p>
-            <p>Metascore: {movie.Metascore}</p>
-            <h3>Story</h3>
-            <p>{movie.Plot}</p>
-            <p>Movie ID</p>
-            <p>{id}</p>
-            <p>Year</p>
-            <p>{movie.Year}</p>
-            <button onClick={() => navigate(`/movie/${id}/seats/${id}`)}>Go to Seats</button>
-            <button onClick={() => navigate("/")}>Back to list</button>
+            <p className='back' onClick={() => navigate("/")}>🔙Back</p>
+            <h1 className='title'>{movie.Title}({movie.Year})</h1>
+            <div className="detailsPage">
 
+                <div className="posterSection">
+                    <img className="posterImage" src={movie.Poster} alt="" />
+                    <button className="chooseSeats" onClick={() => navigate(`/movie/${id}/seats/${id}`)}>
+                        Choose Seats
+                    </button>
+                </div>
+                <div className="infoSection">
+                    <div className="ratingRow">
+                        <span className="tag">IMDb: {movie.imdbRating}</span>
+                        <span className="tag">Votes: {movie.imdbVotes}</span>
+                        <span className="tag">Metascore: {movie.Metascore}</span>
+                    </div>
+                    <h2>Story</h2>
+                    <p className="story">
+                        {movie.Plot}
+                    </p>
+                    <div className="infoGrid">
+                        <div className="infoBox">
+                            <p>Movie ID</p>
+                            <h3>{movie.imdbID}</h3>
+                        </div>
+                        <div className="infoBox">
+                            <p>Year</p>
+                            <h3>{movie.Year}</h3>
+                        </div>
+                    </div>
+                    <div className="buttons">
+                        <button className="seatsButton" onClick={() => navigate(`/movie/${id}/seats/${id}`)}>Go to Seats</button>
+                        <button className="backButton" onClick={() => navigate("/")}>Back to list</button>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

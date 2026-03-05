@@ -7,6 +7,9 @@ function SeatsPage() {
     const seats = useStore((state) => state.seats)
     const { id } = useParams()
     const [movieSeats, setMovieSeats] = useState([])
+    const [selectedX, setSelectedX] = useState(null)
+    const [selectedY, setSelectedY] = useState(null)
+
     useEffect(() => {
         fetchSeats()
     }, [])
@@ -18,26 +21,31 @@ function SeatsPage() {
             setMovieSeats(seats[id])
         }
     }, [seats, id])
-    function takenSeate(seatId){
+    function takenSeate(item){
         const updated = movieSeats.map(seat => {
-            if (seat.id === seatId && !seat.isTaken){
+            if (seat.id === item.id && !seat.isTaken){
                 return {...seat, isTaken: true}
             }
             return seat
         })
         setMovieSeats(updated)
+        setSelectedX(item.numberX)
+        setSelectedY(item.numberY)
         localStorage.setItem(id, JSON.stringify(updated))
     }
     return (
-        <div>
+        <div className='seatsPage'>
             <h1>Choose your seats</h1>
             <p>Movie ID: {id}</p>
+                {selectedX !== null && (
+                    <p>Your place in the movie is in row {selectedX + 1}, place {selectedY + 1}.</p>
+                )}
             <div className='seats'>
                 {movieSeats && movieSeats.map(item => {
                     return (
                         <div className={item.isTaken? 'taken':'seate'}
                          key={item.id}
-                         onClick={()=> takenSeate(item.id)}>
+                         onClick={()=> takenSeate(item)}>
                             <p>R{item.numberY + 1}</p>
                             <p>{item.numberX + 1}</p>
                         </div>
