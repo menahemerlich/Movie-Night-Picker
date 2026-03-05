@@ -5,11 +5,11 @@ function Movie({movie}) {
     
   return (
     <div>
-        <h1>{movie.title}</h1>
-        <p>{movie.year}</p>
-        <p>{movie.runtime}</p>
-        <p>{movie.genre}</p>
-        <p>{movie.language}</p>
+        <h1>{movie.Title}</h1>
+        <p>{movie.Year}</p>
+        <p>{movie.Runtime}</p>
+        <p>{movie.Genre}</p>
+        <p>{movie.Language}</p>
     </div>
   )
 }

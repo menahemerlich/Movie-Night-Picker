@@ -13,6 +13,8 @@ function HomePage() {
     return (
         <div>
             {movies.map((item, index) => {
+                console.log(item);
+                
                 return (
                     <div key={index}>
                         <Movie movie={item} />
