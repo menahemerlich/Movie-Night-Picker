@@ -5,7 +5,7 @@ function Movie({ movie }) {
     return (
         <div className='movieCard'>
             <div className='posterContainer'>
-                <img className='poster' src={movie.Poster} alt="שגיאה בטעינת התמונה" />
+                <img className='poster' src={movie.Poster} alt={movie.Title} />
                 <h1 className='movieTitle'>{movie.Title}</h1>
             </div>
             <div>
