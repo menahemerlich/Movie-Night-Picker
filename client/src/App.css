@@ -173,3 +173,9 @@
     margin: auto;
     padding: 30px;
 }
+input{
+    height: 50px;
+    width: 80%;
+    border-radius: 15px;
+    padding: 5px;
+}
