@@ -16,13 +16,13 @@ app.get("/data", async (req, res) => {
     }
 })
 
-// app.get("/seats", async (req, res) => {
-//     try {
-//         res.status(200).json(seats)
-//     } catch (error) {
-//         console.error(error);
-//     }
-// })
+app.get("/seats", async (req, res) => {
+    try {
+        res.status(200).json(seats)
+    } catch (error) {
+        console.error(error);
+    }
+})
 
 app.listen(3030, () => {
     console.log('server runing...');

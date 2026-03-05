@@ -1,0 +1,20 @@
+.seats{
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 10px;
+}
+.seate{
+    text-align: center;
+    border: 1px solid;
+    border-radius: 15px;
+    color: white;
+    background-color: #fb2c36;
+}
+.taken{
+    text-align: center;
+    border: 1px solid;
+    border-radius: 15px;
+    color: white;
+    background-color: #33d473;
+    cursor: not-allowed;
+}

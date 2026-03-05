@@ -8,13 +8,13 @@ function HomePage() {
     const navigate = useNavigate()
     const fetchMovies = useStore((state) => state.fetchMovies)
     const movies = useStore((state) => state.movies)
-    const searchQuery = useStore((state)=> state.searchQuery)
-    const filteredMovies = movies.filter((movie)=>{
-        if (movie.Title.toLowerCase().includes(searchQuery.toLowerCase()) || movie.Genre.toLowerCase().includes(searchQuery.toLowerCase())){
+    const searchQuery = useStore((state) => state.searchQuery)
+    const filteredMovies = movies.filter((movie) => {
+        if (movie.Title.toLowerCase().includes(searchQuery.toLowerCase()) || movie.Genre.toLowerCase().includes(searchQuery.toLowerCase())) {
             return movie
         }
     })
-    
+
     useEffect(() => {
         fetchMovies()
     }, [])
@@ -22,10 +22,10 @@ function HomePage() {
         <div>
             <h1>Movie Night</h1>
             <p>Search a movie and pick your seats</p>
-            <Search/>
-            {filteredMovies.map((item, index) => {  
+            <Search />
+            {filteredMovies.map((item) => {                
                 return (
-                    <div key={index} onClick={navigate(`/movie/${item.imdbID}`)}>
+                    <div key={item.imdbID} onClick={() => navigate(`/movie/${item.imdbID}`)}>
                         <Movie movie={item} />
                     </div>
                 )
